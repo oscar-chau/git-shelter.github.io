@@ -1,261 +1,289 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Caritas | Alpha Release</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f7f9fc;
-      color: #222;
-      line-height: 1.6;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Caritas | Alpha Release</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f7f9fc;
+        color: #222;
+        line-height: 1.6;
+      }
 
-    header {
-      background: #1f2937;
-      color: white;
-      padding: 3rem 1.5rem;
-      text-align: center;
-    }
+      header {
+        background: #1f2937;
+        color: white;
+        padding: 3rem 1.5rem;
+        text-align: center;
+      }
 
-    .logo {
-      width: 120px;
-      margin-bottom: 1rem;
-    }
+      .logo {
+        width: 120px;
+        margin-bottom: 1rem;
+      }
 
-    header h1 {
-      margin-bottom: 0.5rem;
-      font-size: 2.5rem;
-    }
+      header h1 {
+        margin-bottom: 0.5rem;
+        font-size: 2.5rem;
+      }
 
-    header p {
-      max-width: 800px;
-      margin: 0.5rem auto 0;
-      font-size: 1.05rem;
-    }
+      header p {
+        max-width: 800px;
+        margin: 0.5rem auto 0;
+        font-size: 1.05rem;
+      }
 
-    main {
-      max-width: 1000px;
-      margin: 2rem auto;
-      padding: 0 1rem 2rem;
-    }
+      main {
+        max-width: 1000px;
+        margin: 2rem auto;
+        padding: 0 1rem 2rem;
+      }
 
-    section {
-      background: white;
-      margin-bottom: 1.5rem;
-      padding: 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    }
+      section {
+        background: white;
+        margin-bottom: 1.5rem;
+        padding: 1.5rem;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      }
 
-    h2 {
-      margin-top: 0;
-      color: #111827;
-    }
+      h2 {
+        margin-top: 0;
+        color: #111827;
+      }
 
-    a {
-      color: #2563eb;
-      text-decoration: none;
-    }
+      a {
+        color: #2563eb;
+        text-decoration: none;
+      }
 
-    a:hover {
-      text-decoration: underline;
-    }
+      a:hover {
+        text-decoration: underline;
+      }
 
-    ul {
-      line-height: 1.8;
-      padding-left: 1.25rem;
-    }
+      ul {
+        line-height: 1.8;
+        padding-left: 1.25rem;
+      }
 
-    .button-row {
-      margin-top: 1.5rem;
-    }
+      .button-row {
+        margin-top: 1.5rem;
+      }
 
-    .button {
-      display: inline-block;
-      margin: 0.25rem 0.5rem 0.25rem 0;
-      padding: 0.75rem 1.2rem;
-      background: #2563eb;
-      color: white;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-    }
+      .button {
+        display: inline-block;
+        margin: 0.25rem 0.5rem 0.25rem 0;
+        padding: 0.75rem 1.2rem;
+        background: #2563eb;
+        color: white;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+      }
 
-    .button:hover {
-      background: #1d4ed8;
-      text-decoration: none;
-    }
+      .button:hover {
+        background: #1d4ed8;
+        text-decoration: none;
+      }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1rem;
-    }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1rem;
+      }
 
-    .card {
-      background: #f9fafb;
-      border: 1px solid #e5e7eb;
-      border-radius: 10px;
-      padding: 1rem;
-    }
+      .card {
+        background: #f9fafb;
+        border: 1px solid #e5e7eb;
+        border-radius: 10px;
+        padding: 1rem;
+      }
 
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      color: #6b7280;
-      font-size: 0.95rem;
-    }
+      footer {
+        text-align: center;
+        padding: 2rem 1rem;
+        color: #6b7280;
+        font-size: 0.95rem;
+      }
 
-    code {
-      background: #f3f4f6;
-      padding: 0.15rem 0.35rem;
-      border-radius: 4px;
-      font-size: 0.95rem;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <img src="caritas-logo.png" alt="Caritas Logo" class="logo" />
-    <h1>Caritas</h1>
-    <p>
-      Alpha release portal for the Caritas Valencia platform. Caritas is a dual-platform
-      system with web and mobile applications that support staff and volunteers in managing
-      participant case files, scheduling activities, documenting visits, and coordinating care.
-    </p>
-
-    <div class="button-row">
-      <a class="button" href="#">View Live Web Application</a>
-    </div>
-  </header>
-
-  <main>
-    <section>
-      <h2>About the Project</h2>
+      code {
+        background: #f3f4f6;
+        padding: 0.15rem 0.35rem;
+        border-radius: 4px;
+        font-size: 0.95rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img src="caritas-logo.png" alt="Caritas Logo" class="logo" />
+      <h1>Caritas</h1>
       <p>
-        Caritas is designed to support the Simon/Tamar program and related outreach services.
-        The platform helps technicians, social workers, workshop staff, and volunteers manage
-        participant information and track ongoing support activities. This website serves as the
-        main hub for the Alpha release, including product links, setup instructions, usage
-        information, feedback channels, and legal policies.
+        Alpha release portal for the Caritas Valencia platform. Caritas is a
+        dual-platform system with web and mobile applications that support staff
+        and volunteers in managing participant case files, scheduling
+        activities, documenting visits, and coordinating care.
       </p>
-    </section>
 
-    <section>
-      <h2>User Groups</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Simon/Tamar Program Technicians</h3>
-          <p>
-            Social workers and staff who manage participant case files, schedule activities,
-            coordinate with volunteers, and document follow-up actions.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Workshop Technicians</h3>
-          <p>
-            Staff who oversee daily occupational workshops and update participant progress
-            and workshop involvement in case files.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Volunteers</h3>
-          <p>
-            Non-staff helpers with limited privileges who complete approved work and maintain
-            user profiles within the broader Caritas platform.
-          </p>
-        </div>
+      <div class="button-row">
+        <a class="button" href="#">View Live Web Application</a>
       </div>
-    </section>
+    </header>
 
-    <section>
-      <h2>Main Features</h2>
-      <ul>
-        <li><strong>Participant Case File Management</strong> – Centralized participant records including demographics, documents, consent forms, and history.</li>
-        <li><strong>Scheduling and Task Coordination</strong> – Calendar and task workflow with reminders and volunteer coordination.</li>
-        <li><strong>Visit Reporting</strong> – Documentation of visits, appointments, housing updates, and follow-up outcomes.</li>
-        <li><strong>Consent Verification</strong> – Collection and storage of digital signatures and participant consent information.</li>
-      </ul>
-    </section>
+    <main>
+      <section>
+        <h2>About the Project</h2>
+        <p>
+          Caritas is designed to support the Simon/Tamar program and related
+          outreach services. The platform helps technicians, social workers,
+          workshop staff, and volunteers manage participant information and
+          track ongoing support activities. This website serves as the main hub
+          for the Alpha release, including product links, setup instructions,
+          usage information, feedback channels, and legal policies.
+        </p>
+      </section>
 
-    <section>
-      <h2>Project Links</h2>
-      <ul>
-        <li><a href="#">Live Web Application</a></li>
-        <li><a href="#installation">Installation and Setup</a></li>
-        <li><a href="#usage">User Guide</a></li>
-        <li><a href="#admin">Administrator Guide</a></li>
-      </ul>
-    </section>
+      <section>
+        <h2>User Groups</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Simon/Tamar Program Technicians</h3>
+            <p>
+              Social workers and staff who manage participant case files,
+              schedule activities, coordinate with volunteers, and document
+              follow-up actions.
+            </p>
+          </div>
 
-    <section id="installation">
-      <h2>Installation and Setup</h2>
-      <p><strong>Prerequisites</strong></p>
-      <ul>
-        <li>Node.js v18 or newer</li>
-        <li>MongoDB local instance or MongoDB Atlas</li>
-        <li>Clerk account for authentication</li>
-      </ul>
+          <div class="card">
+            <h3>Workshop Technicians</h3>
+            <p>
+              Staff who oversee daily occupational workshops and update
+              participant progress and workshop involvement in case files.
+            </p>
+          </div>
 
-      <p><strong>Repository structure</strong></p>
-      <ul>
-        <li><code>backend/</code> – Express API</li>
-        <li><code>web/</code> – Next.js web application</li>
-        <li><code>mobile/</code> – Expo mobile application</li>
-      </ul>
+          <div class="card">
+            <h3>Volunteers</h3>
+            <p>
+              Non-staff helpers with limited privileges who complete approved
+              work and maintain user profiles within the broader Caritas
+              platform.
+            </p>
+          </div>
+        </div>
+      </section>
 
-      <p><strong>Backend setup</strong></p>
-      <p><code>cd backend</code><br><code>npm install</code><br><code>npm start</code></p>
+      <section>
+        <h2>Main Features</h2>
+        <ul>
+          <li>
+            <strong>Participant Case File Management</strong> – Centralized
+            participant records including demographics, documents, consent
+            forms, and history.
+          </li>
+          <li>
+            <strong>Scheduling and Task Coordination</strong> – Calendar and
+            task workflow with reminders and volunteer coordination.
+          </li>
+          <li>
+            <strong>Visit Reporting</strong> – Documentation of visits,
+            appointments, housing updates, and follow-up outcomes.
+          </li>
+          <li>
+            <strong>Consent Verification</strong> – Collection and storage of
+            digital signatures and participant consent information.
+          </li>
+        </ul>
+      </section>
 
-      <p><strong>Web setup</strong></p>
-      <p><code>cd web</code><br><code>npm install</code><br><code>npx prisma generate</code><br><code>npm run dev</code></p>
-    </section>
+      <section>
+        <h2>Project Links</h2>
+        <ul>
+          <li><a href="#">Live Web Application</a></li>
+          <li><a href="#installation">Installation and Setup</a></li>
+          <li><a href="#usage">User Guide</a></li>
+          <li><a href="#admin">Administrator Guide</a></li>
+        </ul>
+      </section>
 
-    <section id="usage">
-      <h2>User Guide</h2>
-      <ul>
-        <li>Open the Caritas web application from the live application link above.</li>
-        <li>Sign in using an authorized account.</li>
-        <li>Manage participant case files and activities.</li>
-        <li>Track visits and follow-ups.</li>
-      </ul>
-    </section>
+      <section id="installation">
+        <h2>Installation and Setup</h2>
+        <p><strong>Prerequisites</strong></p>
+        <ul>
+          <li>Node.js v18 or newer</li>
+          <li>MongoDB local instance or MongoDB Atlas</li>
+          <li>Clerk account for authentication</li>
+        </ul>
 
-    <section id="admin">
-      <h2>Administrator Guide</h2>
-      <ul>
-        <li>Ensure MongoDB and Clerk are configured</li>
-        <li>Start backend before web app</li>
-        <li>Set correct backend URL</li>
-        <li>Run Prisma after DB setup</li>
-      </ul>
-    </section>
+        <p><strong>Repository structure</strong></p>
+        <ul>
+          <li><code>backend/</code> – Express API</li>
+          <li><code>web/</code> – Next.js web application</li>
+          <li><code>mobile/</code> – Expo mobile application</li>
+        </ul>
 
-    <section>
-      <h2>Feedback and Bug Reports</h2>
-      <p>
-        Contact:
-        <a href="mailto:oscarchau126@gmail.com">oscarchau126@gmail.com</a>
-      </p>
-    </section>
+        <p><strong>Backend setup</strong></p>
+        <p>
+          <code>cd backend</code><br /><code>npm install</code><br /><code
+            >npm start</code
+          >
+        </p>
 
-    <section>
-      <h2>Legal</h2>
-      <ul>
-        <li><a href="eula.html">EULA</a></li>
-        <li><a href="privacy.html">Privacy Policy</a></li>
-      </ul>
-    </section>
-  </main>
+        <p><strong>Web setup</strong></p>
+        <p>
+          <code>cd web</code><br /><code>npm install</code><br /><code
+            >npx prisma generate</code
+          ><br /><code>npm run dev</code>
+        </p>
+      </section>
 
-  <footer>
-    <p>Caritas Alpha Release • Web Team</p>
-  </footer>
-</body>
+      <section id="usage">
+        <h2>User Guide</h2>
+        <ul>
+          <li>
+            Open the Caritas web application from the live application link
+            above.
+          </li>
+          <li>Sign in using an authorized account.</li>
+          <li>Manage participant case files and activities.</li>
+          <li>Track visits and follow-ups.</li>
+        </ul>
+      </section>
+
+      <section id="admin">
+        <h2>Administrator Guide</h2>
+        <ul>
+          <li>Ensure MongoDB and Clerk are configured</li>
+          <li>Start backend before web app</li>
+          <li>Set correct backend URL</li>
+          <li>Run Prisma after DB setup</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Feedback and Bug Reports</h2>
+        <p>
+          Contact:
+          <a href="mailto:oscarchau126@gmail.com">oscarchau126@gmail.com</a>
+        </p>
+      </section>
+
+      <section>
+        <h2>Legal</h2>
+        <ul>
+          <li><a href="eula.html">EULA</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>Caritas Alpha Release • Web Team</p>
+    </footer>
+  </body>
 </html>
