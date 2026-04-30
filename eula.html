@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ca">
 <head>
   <meta charset="UTF-8">
   <title>Caritas EULA</title>
@@ -15,77 +15,209 @@
     h1, h2 {
       color: #111827;
     }
+
+    /* Language Toggle */
+    .lang-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #111827;
+      padding: 0.5rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0;
+      z-index: 999;
+      box-sizing: border-box;
+    }
+
+    body {
+      padding-top: 3rem;
+    }
+
+    .lang-btn {
+      background: transparent;
+      color: #9ca3af;
+      border: 1px solid #374151;
+      padding: 0.3rem 0.85rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+      letter-spacing: 0.03em;
+    }
+
+    .lang-btn:first-child {
+      border-radius: 6px 0 0 6px;
+      border-right: none;
+    }
+
+    .lang-btn:last-child {
+      border-radius: 0 6px 6px 0;
+      border-left: none;
+    }
+
+    .lang-btn:not(:first-child):not(:last-child) {
+      border-left: 1px solid #374151;
+      border-right: 1px solid #374151;
+    }
+
+    .lang-btn.active {
+      background: #2563eb;
+      color: white;
+      border-color: #2563eb;
+    }
+
+    .lang-btn:not(.active):hover {
+      background: #1f2937;
+      color: #e5e7eb;
+    }
   </style>
 </head>
 <body>
 
-<h1>End-User License Agreement (EULA) for Caritas</h1>
+  <div class="lang-bar">
+    <button class="lang-btn active" onclick="setLanguage('ca')" id="btn-ca">CAT</button>
+    <button class="lang-btn" onclick="setLanguage('es')" id="btn-es">ES</button>
+    <button class="lang-btn" onclick="setLanguage('en')" id="btn-en">EN</button>
+  </div>
 
-<p>
-This End-User License Agreement ("EULA") is a legal agreement between you and the Caritas Development Team ("Company").
-</p>
+  <h1 data-i18n="title"></h1>
+  <p data-i18n="intro1"></p>
+  <p data-i18n="intro2"></p>
+  <p data-i18n="intro3"></p>
 
-<p>
-This EULA governs your use of the Caritas software ("Software"), including the web and mobile applications, provided by the Company.
-</p>
+  <h2 data-i18n="license.title"></h2>
+  <p data-i18n="license.grant"></p>
+  <p data-i18n="license.mayLabel"></p>
+  <ul>
+    <li data-i18n="license.may1"></li>
+    <li data-i18n="license.may2"></li>
+  </ul>
+  <p data-i18n="license.mayNotLabel"></p>
+  <ul>
+    <li data-i18n="license.mayNot1"></li>
+    <li data-i18n="license.mayNot2"></li>
+    <li data-i18n="license.mayNot3"></li>
+    <li data-i18n="license.mayNot4"></li>
+  </ul>
 
-<p>
-By accessing or using the Software, you agree to be bound by the terms of this EULA. If you do not agree, you must not use the Software.
-</p>
+  <h2 data-i18n="ip.title"></h2>
+  <p data-i18n="ip.body"></p>
 
-<h2>License Grant</h2>
+  <h2 data-i18n="termination.title"></h2>
+  <p data-i18n="termination.body1"></p>
+  <p data-i18n="termination.body2"></p>
 
-<p>
-The Company grants you a personal, non-transferable, non-exclusive license to use the Software for its intended purpose.
-</p>
+  <h2 data-i18n="warranty.title"></h2>
+  <p data-i18n="warranty.body"></p>
 
-<p>You may:</p>
-<ul>
-  <li>Access and use the Software through supported devices and platforms</li>
-  <li>Use the Software for internal, non-commercial purposes related to the Caritas program</li>
-</ul>
+  <h2 data-i18n="liability.title"></h2>
+  <p data-i18n="liability.body"></p>
 
-<p>You may not:</p>
-<ul>
-  <li>Modify, reverse engineer, or attempt to extract source code</li>
-  <li>Reproduce, distribute, or resell the Software</li>
-  <li>Use the Software for unlawful purposes</li>
-  <li>Allow unauthorized third parties to access or use the Software</li>
-</ul>
+  <h2 data-i18n="law.title"></h2>
+  <p data-i18n="law.body"></p>
 
-<h2>Intellectual Property</h2>
+  <script>
+    const translations = {
+      ca: {
+        "title": "Acord de Llicència d'Usuari Final (EULA) per a Caritas",
+        "intro1": "Aquest Acord de Llicència d'Usuari Final («EULA») és un acord legal entre vostè i l'Equip de Desenvolupament de Caritas («Empresa»).",
+        "intro2": "Aquest EULA regula l'ús del programari Caritas («Programari»), incloent-hi les aplicacions web i mòbil, proporcionades per l'Empresa.",
+        "intro3": "En accedir o utilitzar el Programari, accepta estar vinculat pels termes d'aquest EULA. Si no hi està d'acord, no ha d'utilitzar el Programari.",
+        "license.title": "Concessió de Llicència",
+        "license.grant": "L'Empresa li concedeix una llicència personal, intransferible i no exclusiva per utilitzar el Programari per a la seva finalitat prevista.",
+        "license.mayLabel": "Pot:",
+        "license.may1": "Accedir i utilitzar el Programari a través de dispositius i plataformes compatibles",
+        "license.may2": "Utilitzar el Programari per a fins interns i no comercials relacionats amb el programa Caritas",
+        "license.mayNotLabel": "No pot:",
+        "license.mayNot1": "Modificar, fer enginyeria inversa o intentar extreure el codi font",
+        "license.mayNot2": "Reproduir, distribuir o revendre el Programari",
+        "license.mayNot3": "Utilitzar el Programari per a fins il·lícits",
+        "license.mayNot4": "Permetre que tercers no autoritzats accedeixin o utilitzin el Programari",
+        "ip.title": "Propietat Intel·lectual",
+        "ip.body": "Tots els drets, títols i interessos del Programari romanen a l'Empresa. El Programari està protegit per drets d'autor i altres lleis de propietat intel·lectual.",
+        "termination.title": "Resolució",
+        "termination.body1": "Aquest EULA és efectiu fins que es resolgui. Es resoldrà automàticament si no compleix els seus termes.",
+        "termination.body2": "En cas de resolució, ha de deixar d'utilitzar el Programari immediatament.",
+        "warranty.title": "Exempció de Garantia",
+        "warranty.body": "El Programari es proporciona «tal com és» sense garanties de cap tipus. L'Empresa no garanteix que el Programari estigui lliure d'errors o sigui ininterromput.",
+        "liability.title": "Limitació de Responsabilitat",
+        "liability.body": "L'Empresa no serà responsable de cap dany derivat de l'ús o la impossibilitat d'ús del Programari.",
+        "law.title": "Legislació Aplicable",
+        "law.body": "Aquest EULA es regirà i s'interpretarà d'acord amb les lleis de l'Estat de Califòrnia, Estats Units.",
+      },
+      es: {
+        "title": "Acuerdo de Licencia de Usuario Final (EULA) para Caritas",
+        "intro1": "Este Acuerdo de Licencia de Usuario Final («EULA») es un acuerdo legal entre usted y el Equipo de Desarrollo de Caritas («Empresa»).",
+        "intro2": "Este EULA regula el uso del software Caritas («Software»), incluidas las aplicaciones web y móvil, proporcionadas por la Empresa.",
+        "intro3": "Al acceder o utilizar el Software, acepta quedar vinculado por los términos de este EULA. Si no está de acuerdo, no debe utilizar el Software.",
+        "license.title": "Concesión de Licencia",
+        "license.grant": "La Empresa le otorga una licencia personal, intransferible y no exclusiva para utilizar el Software con su propósito previsto.",
+        "license.mayLabel": "Puede:",
+        "license.may1": "Acceder y utilizar el Software a través de dispositivos y plataformas compatibles",
+        "license.may2": "Utilizar el Software para fines internos y no comerciales relacionados con el programa Caritas",
+        "license.mayNotLabel": "No puede:",
+        "license.mayNot1": "Modificar, realizar ingeniería inversa o intentar extraer el código fuente",
+        "license.mayNot2": "Reproducir, distribuir o revender el Software",
+        "license.mayNot3": "Utilizar el Software para fines ilegales",
+        "license.mayNot4": "Permitir que terceros no autorizados accedan o utilicen el Software",
+        "ip.title": "Propiedad Intelectual",
+        "ip.body": "Todos los derechos, títulos e intereses sobre el Software permanecen en la Empresa. El Software está protegido por derechos de autor y otras leyes de propiedad intelectual.",
+        "termination.title": "Resolución",
+        "termination.body1": "Este EULA es efectivo hasta su resolución. Se resolverá automáticamente si no cumple con sus términos.",
+        "termination.body2": "Tras la resolución, debe dejar de utilizar el Software de inmediato.",
+        "warranty.title": "Exención de Garantía",
+        "warranty.body": "El Software se proporciona «tal como está» sin garantías de ningún tipo. La Empresa no garantiza que el Software esté libre de errores o sea ininterrumpido.",
+        "liability.title": "Limitación de Responsabilidad",
+        "liability.body": "La Empresa no será responsable de ningún daño derivado del uso o la imposibilidad de uso del Software.",
+        "law.title": "Legislación Aplicable",
+        "law.body": "Este EULA se regirá e interpretará de conformidad con las leyes del Estado de California, Estados Unidos.",
+      },
+      en: {
+        "title": "End-User License Agreement (EULA) for Caritas",
+        "intro1": "This End-User License Agreement (\"EULA\") is a legal agreement between you and the Caritas Development Team (\"Company\").",
+        "intro2": "This EULA governs your use of the Caritas software (\"Software\"), including the web and mobile applications, provided by the Company.",
+        "intro3": "By accessing or using the Software, you agree to be bound by the terms of this EULA. If you do not agree, you must not use the Software.",
+        "license.title": "License Grant",
+        "license.grant": "The Company grants you a personal, non-transferable, non-exclusive license to use the Software for its intended purpose.",
+        "license.mayLabel": "You may:",
+        "license.may1": "Access and use the Software through supported devices and platforms",
+        "license.may2": "Use the Software for internal, non-commercial purposes related to the Caritas program",
+        "license.mayNotLabel": "You may not:",
+        "license.mayNot1": "Modify, reverse engineer, or attempt to extract source code",
+        "license.mayNot2": "Reproduce, distribute, or resell the Software",
+        "license.mayNot3": "Use the Software for unlawful purposes",
+        "license.mayNot4": "Allow unauthorized third parties to access or use the Software",
+        "ip.title": "Intellectual Property",
+        "ip.body": "All rights, title, and interest in the Software remain with the Company. The Software is protected by copyright and other intellectual property laws.",
+        "termination.title": "Termination",
+        "termination.body1": "This EULA is effective until terminated. It will terminate automatically if you fail to comply with its terms.",
+        "termination.body2": "Upon termination, you must stop using the Software immediately.",
+        "warranty.title": "Disclaimer of Warranty",
+        "warranty.body": "The Software is provided \"as is\" without warranties of any kind. The Company does not guarantee that the Software will be error-free or uninterrupted.",
+        "liability.title": "Limitation of Liability",
+        "liability.body": "The Company shall not be liable for any damages arising from the use or inability to use the Software.",
+        "law.title": "Governing Law",
+        "law.body": "This EULA shall be governed by and interpreted in accordance with the laws of the State of California, United States.",
+      }
+    };
 
-<p>
-All rights, title, and interest in the Software remain with the Company. The Software is protected by copyright and other intellectual property laws.
-</p>
+    function setLanguage(lang) {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+      document.documentElement.lang = lang;
+      document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+      document.getElementById('btn-' + lang).classList.add('active');
+      localStorage.setItem('caritasLang', lang);
+    }
 
-<h2>Termination</h2>
-
-<p>
-This EULA is effective until terminated. It will terminate automatically if you fail to comply with its terms.
-</p>
-
-<p>
-Upon termination, you must stop using the Software immediately.
-</p>
-
-<h2>Disclaimer of Warranty</h2>
-
-<p>
-The Software is provided "as is" without warranties of any kind. The Company does not guarantee that the Software will be error-free or uninterrupted.
-</p>
-
-<h2>Limitation of Liability</h2>
-
-<p>
-The Company shall not be liable for any damages arising from the use or inability to use the Software.
-</p>
-
-<h2>Governing Law</h2>
-
-<p>
-This EULA shall be governed by and interpreted in accordance with the laws of the State of California, United States.
-</p>
-
+    const savedLang = localStorage.getItem('caritasLang') || 'ca';
+    setLanguage(savedLang);
+  </script>
 </body>
 </html>
