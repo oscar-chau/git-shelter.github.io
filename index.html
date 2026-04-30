@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="ca">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,6 +12,55 @@
         background: #f7f9fc;
         color: #222;
         line-height: 1.6;
+      }
+
+      /* Language Toggle */
+      .lang-bar {
+        background: #111827;
+        padding: 0.5rem 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0;
+      }
+
+      .lang-btn {
+        background: transparent;
+        color: #9ca3af;
+        border: 1px solid #374151;
+        padding: 0.3rem 0.85rem;
+        font-size: 0.85rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.15s, color 0.15s;
+        letter-spacing: 0.03em;
+      }
+
+      .lang-btn:first-child {
+        border-radius: 6px 0 0 6px;
+        border-right: none;
+      }
+
+      .lang-btn:last-child {
+        border-radius: 0 6px 6px 0;
+        border-left: none;
+      }
+
+      .lang-btn:not(:first-child):not(:last-child) {
+        border-left: none;
+        border-right: none;
+        border-left: 1px solid #374151;
+        border-right: 1px solid #374151;
+      }
+
+      .lang-btn.active {
+        background: #2563eb;
+        color: white;
+        border-color: #2563eb;
+      }
+
+      .lang-btn:not(.active):hover {
+        background: #1f2937;
+        color: #e5e7eb;
       }
 
       header {
@@ -119,170 +168,317 @@
     </style>
   </head>
   <body>
+
+    <!-- Language Toggle Bar -->
+    <div class="lang-bar">
+      <button class="lang-btn active" onclick="setLanguage('ca')" id="btn-ca">CAT</button>
+      <button class="lang-btn" onclick="setLanguage('es')" id="btn-es">ES</button>
+      <button class="lang-btn" onclick="setLanguage('en')" id="btn-en">EN</button>
+    </div>
+
     <header>
       <img src="caritas-logo.png" alt="Caritas Logo" class="logo" />
-      <p>
-        Alpha release portal for the Caritas Valencia platform. Caritas is a
-        dual-platform system with web and mobile applications that support staff
-        and volunteers in managing participant case files, scheduling
-        activities, documenting visits, and coordinating care.
-      </p>
-
+      <p data-i18n="header.description"></p>
       <div class="button-row">
-        <a class="button" href="#">View Live Web Application</a>
+        <a class="button" href="#" data-i18n="header.button"></a>
       </div>
     </header>
 
     <main>
       <section>
-        <h2>About the Project</h2>
-        <p>
-          Caritas is designed to support the Simon/Tamar program and related
-          outreach services. The platform helps technicians, social workers,
-          workshop staff, and volunteers manage participant information and
-          track ongoing support activities. This website serves as the main hub
-          for the Alpha release, including product links, setup instructions,
-          usage information, feedback channels, and legal policies.
-        </p>
+        <h2 data-i18n="about.title"></h2>
+        <p data-i18n="about.body"></p>
       </section>
 
       <section>
-        <h2>User Groups</h2>
+        <h2 data-i18n="userGroups.title"></h2>
         <div class="grid">
           <div class="card">
-            <h3>Simon/Tamar Program Technicians</h3>
-            <p>
-              Social workers and staff who manage participant case files,
-              schedule activities, coordinate with volunteers, and document
-              follow-up actions.
-            </p>
+            <h3 data-i18n="userGroups.tech1.title"></h3>
+            <p data-i18n="userGroups.tech1.body"></p>
           </div>
-
           <div class="card">
-            <h3>Workshop Technicians</h3>
-            <p>
-              Staff who oversee daily occupational workshops and update
-              participant progress and workshop involvement in case files.
-            </p>
+            <h3 data-i18n="userGroups.tech2.title"></h3>
+            <p data-i18n="userGroups.tech2.body"></p>
           </div>
-
           <div class="card">
-            <h3>Volunteers</h3>
-            <p>
-              Non-staff helpers with limited privileges who complete approved
-              work and maintain user profiles within the broader Caritas
-              platform.
-            </p>
+            <h3 data-i18n="userGroups.volunteers.title"></h3>
+            <p data-i18n="userGroups.volunteers.body"></p>
           </div>
         </div>
       </section>
 
       <section>
-        <h2>Main Features</h2>
+        <h2 data-i18n="features.title"></h2>
         <ul>
-          <li>
-            <strong>Participant Case File Management</strong> – Centralized
-            participant records including demographics, documents, consent
-            forms, and history.
-          </li>
-          <li>
-            <strong>Scheduling and Task Coordination</strong> – Calendar and
-            task workflow with reminders and volunteer coordination.
-          </li>
-          <li>
-            <strong>Visit Reporting</strong> – Documentation of visits,
-            appointments, housing updates, and follow-up outcomes.
-          </li>
-          <li>
-            <strong>Consent Verification</strong> – Collection and storage of
-            digital signatures and participant consent information.
-          </li>
+          <li><strong data-i18n="features.f1.label"></strong> – <span data-i18n="features.f1.desc"></span></li>
+          <li><strong data-i18n="features.f2.label"></strong> – <span data-i18n="features.f2.desc"></span></li>
+          <li><strong data-i18n="features.f3.label"></strong> – <span data-i18n="features.f3.desc"></span></li>
+          <li><strong data-i18n="features.f4.label"></strong> – <span data-i18n="features.f4.desc"></span></li>
         </ul>
       </section>
 
       <section>
-        <h2>Project Links</h2>
+        <h2 data-i18n="links.title"></h2>
         <ul>
-          <li><a href="#">Live Web Application</a></li>
-          <li><a href="#installation">Installation and Setup</a></li>
-          <li><a href="#usage">User Guide</a></li>
-          <li><a href="#admin">Administrator Guide</a></li>
+          <li><a href="#" data-i18n="links.live"></a></li>
+          <li><a href="#installation" data-i18n="links.install"></a></li>
+          <li><a href="#usage" data-i18n="links.usage"></a></li>
+          <li><a href="#admin" data-i18n="links.admin"></a></li>
         </ul>
       </section>
 
       <section id="installation">
-        <h2>Installation and Setup</h2>
-        <p><strong>Prerequisites</strong></p>
+        <h2 data-i18n="install.title"></h2>
+        <p><strong data-i18n="install.prereqs"></strong></p>
         <ul>
-          <li>Node.js v18 or newer</li>
-          <li>MongoDB local instance or MongoDB Atlas</li>
-          <li>Clerk account for authentication</li>
+          <li data-i18n="install.prereq1"></li>
+          <li data-i18n="install.prereq2"></li>
+          <li data-i18n="install.prereq3"></li>
         </ul>
-
-        <p><strong>Repository structure</strong></p>
+        <p><strong data-i18n="install.repoStructure"></strong></p>
         <ul>
-          <li><code>backend/</code> – Express API</li>
-          <li><code>web/</code> – Next.js web application</li>
-          <li><code>mobile/</code> – Expo mobile application</li>
+          <li><code>backend/</code> – <span data-i18n="install.backend"></span></li>
+          <li><code>web/</code> – <span data-i18n="install.web"></span></li>
+          <li><code>mobile/</code> – <span data-i18n="install.mobile"></span></li>
         </ul>
-
-        <p><strong>Backend setup</strong></p>
+        <p><strong data-i18n="install.backendSetup"></strong></p>
         <p>
-          <code>cd backend</code><br /><code>npm install</code><br /><code
-            >npm start</code
-          >
+          <code>cd backend</code><br /><code>npm install</code><br /><code>npm start</code>
         </p>
-
-        <p><strong>Web setup</strong></p>
+        <p><strong data-i18n="install.webSetup"></strong></p>
         <p>
-          <code>cd web</code><br /><code>npm install</code><br /><code
-            >npx prisma generate</code
-          ><br /><code>npm run dev</code>
+          <code>cd web</code><br /><code>npm install</code><br /><code>npx prisma generate</code><br /><code>npm run dev</code>
         </p>
       </section>
 
       <section id="usage">
-        <h2>User Guide</h2>
+        <h2 data-i18n="usage.title"></h2>
         <ul>
-          <li>
-            Open the Caritas web application from the live application link
-            above.
-          </li>
-          <li>Sign in using an authorized account.</li>
-          <li>Manage participant case files and activities.</li>
-          <li>Track visits and follow-ups.</li>
+          <li data-i18n="usage.step1"></li>
+          <li data-i18n="usage.step2"></li>
+          <li data-i18n="usage.step3"></li>
+          <li data-i18n="usage.step4"></li>
         </ul>
       </section>
 
       <section id="admin">
-        <h2>Administrator Guide</h2>
+        <h2 data-i18n="admin.title"></h2>
         <ul>
-          <li>Ensure MongoDB and Clerk are configured</li>
-          <li>Start backend before web app</li>
-          <li>Set correct backend URL</li>
-          <li>Run Prisma after DB setup</li>
+          <li data-i18n="admin.step1"></li>
+          <li data-i18n="admin.step2"></li>
+          <li data-i18n="admin.step3"></li>
+          <li data-i18n="admin.step4"></li>
         </ul>
       </section>
 
       <section>
-        <h2>Feedback and Bug Reports</h2>
-        <p>
-          Contact:
-          <a href="mailto:oscarchau126@gmail.com">oscarchau126@gmail.com</a>
-        </p>
+        <h2 data-i18n="feedback.title"></h2>
+        <p><span data-i18n="feedback.contact"></span> <a href="mailto:oscarchau126@gmail.com">oscarchau126@gmail.com</a></p>
       </section>
 
       <section>
-        <h2>Legal</h2>
+        <h2 data-i18n="legal.title"></h2>
         <ul>
-          <li><a href="eula.html">EULA</a></li>
-          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="eula.html" data-i18n="legal.eula"></a></li>
+          <li><a href="privacy.html" data-i18n="legal.privacy"></a></li>
         </ul>
       </section>
     </main>
 
     <footer>
-      <p>Caritas Alpha Release • Web Team</p>
+      <p data-i18n="footer.text"></p>
     </footer>
+
+    <script>
+      const translations = {
+        ca: {
+          "header.description": "Portal de llançament alpha per a la plataforma Caritas València. Caritas és un sistema de doble plataforma amb aplicacions web i mòbil que donen suport al personal i als voluntaris en la gestió dels expedients dels participants, la programació d'activitats, la documentació de visites i la coordinació de l'atenció.",
+          "header.button": "Veure l'aplicació web en directe",
+          "about.title": "Sobre el projecte",
+          "about.body": "Caritas està dissenyat per donar suport al programa Simon/Tamar i als serveis d'extensió relacionats. La plataforma ajuda els tècnics, treballadors socials, personal de tallers i voluntaris a gestionar la informació dels participants i fer un seguiment de les activitats de suport en curs. Aquest lloc web serveix com a centre principal per al llançament Alpha, incloent-hi enllaços a productes, instruccions de configuració, informació d'ús, canals de comentaris i polítiques legals.",
+          "userGroups.title": "Grups d'usuaris",
+          "userGroups.tech1.title": "Tècnics del Programa Simon/Tamar",
+          "userGroups.tech1.body": "Treballadors socials i personal que gestionen els expedients dels participants, programen activitats, coordinen amb voluntaris i documenten les accions de seguiment.",
+          "userGroups.tech2.title": "Tècnics de Tallers",
+          "userGroups.tech2.body": "Personal que supervisa els tallers ocupacionals diaris i actualitza el progrés dels participants i la participació en tallers als expedients.",
+          "userGroups.volunteers.title": "Voluntaris",
+          "userGroups.volunteers.body": "Col·laboradors no professionals amb privilegis limitats que completen el treball aprovat i mantenen perfils d'usuari dins de la plataforma Caritas.",
+          "features.title": "Funcionalitats principals",
+          "features.f1.label": "Gestió d'Expedients de Participants",
+          "features.f1.desc": "Registres centralitzats dels participants incloent-hi dades demogràfiques, documents, formularis de consentiment i historial.",
+          "features.f2.label": "Programació i Coordinació de Tasques",
+          "features.f2.desc": "Calendari i flux de treball de tasques amb recordatoris i coordinació de voluntaris.",
+          "features.f3.label": "Informes de Visites",
+          "features.f3.desc": "Documentació de visites, cites, actualitzacions d'habitatge i resultats de seguiment.",
+          "features.f4.label": "Verificació del Consentiment",
+          "features.f4.desc": "Recollida i emmagatzematge de signatures digitals i informació de consentiment dels participants.",
+          "links.title": "Enllaços del projecte",
+          "links.live": "Aplicació web en directe",
+          "links.install": "Instal·lació i configuració",
+          "links.usage": "Guia d'usuari",
+          "links.admin": "Guia d'administrador",
+          "install.title": "Instal·lació i configuració",
+          "install.prereqs": "Requisits previs",
+          "install.prereq1": "Node.js v18 o superior",
+          "install.prereq2": "Instància local de MongoDB o MongoDB Atlas",
+          "install.prereq3": "Compte de Clerk per a l'autenticació",
+          "install.repoStructure": "Estructura del repositori",
+          "install.backend": "API Express",
+          "install.web": "Aplicació web Next.js",
+          "install.mobile": "Aplicació mòbil Expo",
+          "install.backendSetup": "Configuració del backend",
+          "install.webSetup": "Configuració web",
+          "usage.title": "Guia d'usuari",
+          "usage.step1": "Obriu l'aplicació web Caritas des de l'enllaç de l'aplicació en directe anterior.",
+          "usage.step2": "Inicieu sessió amb un compte autoritzat.",
+          "usage.step3": "Gestioneu els expedients dels participants i les activitats.",
+          "usage.step4": "Feu un seguiment de les visites i el seguiment posterior.",
+          "admin.title": "Guia d'administrador",
+          "admin.step1": "Assegureu-vos que MongoDB i Clerk estiguin configurats",
+          "admin.step2": "Inicieu el backend abans de l'aplicació web",
+          "admin.step3": "Establiu l'URL correcta del backend",
+          "admin.step4": "Executeu Prisma després de la configuració de la base de dades",
+          "feedback.title": "Comentaris i informes d'errors",
+          "feedback.contact": "Contacte:",
+          "legal.title": "Legal",
+          "legal.eula": "EULA",
+          "legal.privacy": "Política de privadesa",
+          "footer.text": "Caritas Llançament Alpha • Equip Web",
+        },
+        es: {
+          "header.description": "Portal de lanzamiento alpha para la plataforma Caritas Valencia. Caritas es un sistema de doble plataforma con aplicaciones web y móvil que apoyan al personal y a los voluntarios en la gestión de expedientes de participantes, programación de actividades, documentación de visitas y coordinación de la atención.",
+          "header.button": "Ver la aplicación web en vivo",
+          "about.title": "Sobre el proyecto",
+          "about.body": "Caritas está diseñado para apoyar el programa Simon/Tamar y los servicios de extensión relacionados. La plataforma ayuda a técnicos, trabajadores sociales, personal de talleres y voluntarios a gestionar la información de los participantes y hacer seguimiento de las actividades de apoyo en curso. Este sitio web sirve como centro principal para el lanzamiento Alpha, incluyendo enlaces a productos, instrucciones de configuración, información de uso, canales de comentarios y políticas legales.",
+          "userGroups.title": "Grupos de usuarios",
+          "userGroups.tech1.title": "Técnicos del Programa Simon/Tamar",
+          "userGroups.tech1.body": "Trabajadores sociales y personal que gestionan expedientes de participantes, programan actividades, coordinan con voluntarios y documentan acciones de seguimiento.",
+          "userGroups.tech2.title": "Técnicos de Talleres",
+          "userGroups.tech2.body": "Personal que supervisa los talleres ocupacionales diarios y actualiza el progreso de los participantes y su participación en talleres en los expedientes.",
+          "userGroups.volunteers.title": "Voluntarios",
+          "userGroups.volunteers.body": "Colaboradores no profesionales con privilegios limitados que completan el trabajo aprobado y mantienen perfiles de usuario dentro de la plataforma Caritas.",
+          "features.title": "Funcionalidades principales",
+          "features.f1.label": "Gestión de Expedientes de Participantes",
+          "features.f1.desc": "Registros centralizados de participantes con datos demográficos, documentos, formularios de consentimiento e historial.",
+          "features.f2.label": "Programación y Coordinación de Tareas",
+          "features.f2.desc": "Calendario y flujo de trabajo de tareas con recordatorios y coordinación de voluntarios.",
+          "features.f3.label": "Informes de Visitas",
+          "features.f3.desc": "Documentación de visitas, citas, actualizaciones de alojamiento y resultados de seguimiento.",
+          "features.f4.label": "Verificación del Consentimiento",
+          "features.f4.desc": "Recopilación y almacenamiento de firmas digitales e información de consentimiento de los participantes.",
+          "links.title": "Enlaces del proyecto",
+          "links.live": "Aplicación web en vivo",
+          "links.install": "Instalación y configuración",
+          "links.usage": "Guía de usuario",
+          "links.admin": "Guía del administrador",
+          "install.title": "Instalación y configuración",
+          "install.prereqs": "Requisitos previos",
+          "install.prereq1": "Node.js v18 o superior",
+          "install.prereq2": "Instancia local de MongoDB o MongoDB Atlas",
+          "install.prereq3": "Cuenta de Clerk para autenticación",
+          "install.repoStructure": "Estructura del repositorio",
+          "install.backend": "API Express",
+          "install.web": "Aplicación web Next.js",
+          "install.mobile": "Aplicación móvil Expo",
+          "install.backendSetup": "Configuración del backend",
+          "install.webSetup": "Configuración web",
+          "usage.title": "Guía de usuario",
+          "usage.step1": "Abra la aplicación web Caritas desde el enlace de la aplicación en vivo.",
+          "usage.step2": "Inicie sesión con una cuenta autorizada.",
+          "usage.step3": "Gestione los expedientes de participantes y las actividades.",
+          "usage.step4": "Realice el seguimiento de visitas y acciones posteriores.",
+          "admin.title": "Guía del administrador",
+          "admin.step1": "Asegúrese de que MongoDB y Clerk estén configurados",
+          "admin.step2": "Inicie el backend antes de la aplicación web",
+          "admin.step3": "Establezca la URL correcta del backend",
+          "admin.step4": "Ejecute Prisma después de la configuración de la base de datos",
+          "feedback.title": "Comentarios e informes de errores",
+          "feedback.contact": "Contacto:",
+          "legal.title": "Legal",
+          "legal.eula": "EULA",
+          "legal.privacy": "Política de privacidad",
+          "footer.text": "Caritas Lanzamiento Alpha • Equipo Web",
+        },
+        en: {
+          "header.description": "Alpha release portal for the Caritas Valencia platform. Caritas is a dual-platform system with web and mobile applications that support staff and volunteers in managing participant case files, scheduling activities, documenting visits, and coordinating care.",
+          "header.button": "View Live Web Application",
+          "about.title": "About the Project",
+          "about.body": "Caritas is designed to support the Simon/Tamar program and related outreach services. The platform helps technicians, social workers, workshop staff, and volunteers manage participant information and track ongoing support activities. This website serves as the main hub for the Alpha release, including product links, setup instructions, usage information, feedback channels, and legal policies.",
+          "userGroups.title": "User Groups",
+          "userGroups.tech1.title": "Simon/Tamar Program Technicians",
+          "userGroups.tech1.body": "Social workers and staff who manage participant case files, schedule activities, coordinate with volunteers, and document follow-up actions.",
+          "userGroups.tech2.title": "Workshop Technicians",
+          "userGroups.tech2.body": "Staff who oversee daily occupational workshops and update participant progress and workshop involvement in case files.",
+          "userGroups.volunteers.title": "Volunteers",
+          "userGroups.volunteers.body": "Non-staff helpers with limited privileges who complete approved work and maintain user profiles within the broader Caritas platform.",
+          "features.title": "Main Features",
+          "features.f1.label": "Participant Case File Management",
+          "features.f1.desc": "Centralized participant records including demographics, documents, consent forms, and history.",
+          "features.f2.label": "Scheduling and Task Coordination",
+          "features.f2.desc": "Calendar and task workflow with reminders and volunteer coordination.",
+          "features.f3.label": "Visit Reporting",
+          "features.f3.desc": "Documentation of visits, appointments, housing updates, and follow-up outcomes.",
+          "features.f4.label": "Consent Verification",
+          "features.f4.desc": "Collection and storage of digital signatures and participant consent information.",
+          "links.title": "Project Links",
+          "links.live": "Live Web Application",
+          "links.install": "Installation and Setup",
+          "links.usage": "User Guide",
+          "links.admin": "Administrator Guide",
+          "install.title": "Installation and Setup",
+          "install.prereqs": "Prerequisites",
+          "install.prereq1": "Node.js v18 or newer",
+          "install.prereq2": "MongoDB local instance or MongoDB Atlas",
+          "install.prereq3": "Clerk account for authentication",
+          "install.repoStructure": "Repository structure",
+          "install.backend": "Express API",
+          "install.web": "Next.js web application",
+          "install.mobile": "Expo mobile application",
+          "install.backendSetup": "Backend setup",
+          "install.webSetup": "Web setup",
+          "usage.title": "User Guide",
+          "usage.step1": "Open the Caritas web application from the live application link above.",
+          "usage.step2": "Sign in using an authorized account.",
+          "usage.step3": "Manage participant case files and activities.",
+          "usage.step4": "Track visits and follow-ups.",
+          "admin.title": "Administrator Guide",
+          "admin.step1": "Ensure MongoDB and Clerk are configured",
+          "admin.step2": "Start backend before web app",
+          "admin.step3": "Set correct backend URL",
+          "admin.step4": "Run Prisma after DB setup",
+          "feedback.title": "Feedback and Bug Reports",
+          "feedback.contact": "Contact:",
+          "legal.title": "Legal",
+          "legal.eula": "EULA",
+          "legal.privacy": "Privacy Policy",
+          "footer.text": "Caritas Alpha Release • Web Team",
+        }
+      };
+
+      function setLanguage(lang) {
+        // Update all translated elements
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          if (translations[lang][key]) {
+            el.textContent = translations[lang][key];
+          }
+        });
+
+        // Update html lang attribute
+        document.documentElement.lang = lang;
+
+        // Update active button
+        document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+        document.getElementById('btn-' + lang).classList.add('active');
+
+        // Persist preference
+        localStorage.setItem('caritasLang', lang);
+      }
+
+      // On load, use saved preference or default to Catalan
+      const savedLang = localStorage.getItem('caritasLang') || 'ca';
+      setLanguage(savedLang);
+    </script>
   </body>
 </html>
