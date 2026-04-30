@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ca">
 <head>
   <meta charset="UTF-8">
   <title>Caritas Privacy Policy</title>
@@ -15,103 +15,301 @@
     h1, h2 {
       color: #111827;
     }
+
+    /* Language Toggle */
+    .lang-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #111827;
+      padding: 0.5rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0;
+      z-index: 999;
+      box-sizing: border-box;
+    }
+
+    body {
+      padding-top: 3rem;
+    }
+
+    .lang-btn {
+      background: transparent;
+      color: #9ca3af;
+      border: 1px solid #374151;
+      padding: 0.3rem 0.85rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+      letter-spacing: 0.03em;
+    }
+
+    .lang-btn:first-child {
+      border-radius: 6px 0 0 6px;
+      border-right: none;
+    }
+
+    .lang-btn:last-child {
+      border-radius: 0 6px 6px 0;
+      border-left: none;
+    }
+
+    .lang-btn:not(:first-child):not(:last-child) {
+      border-left: 1px solid #374151;
+      border-right: 1px solid #374151;
+    }
+
+    .lang-btn.active {
+      background: #2563eb;
+      color: white;
+      border-color: #2563eb;
+    }
+
+    .lang-btn:not(.active):hover {
+      background: #1f2937;
+      color: #e5e7eb;
+    }
   </style>
 </head>
 <body>
 
-<h1>Privacy Policy for Caritas</h1>
+  <div class="lang-bar">
+    <button class="lang-btn active" onclick="setLanguage('ca')" id="btn-ca">CAT</button>
+    <button class="lang-btn" onclick="setLanguage('es')" id="btn-es">ES</button>
+    <button class="lang-btn" onclick="setLanguage('en')" id="btn-en">EN</button>
+  </div>
 
-<p>
-The Caritas Development Team operates the Caritas platform, including web and mobile applications. This privacy policy explains how we collect, use, and protect your data when you use our services.
-</p>
+  <h1 data-i18n="title"></h1>
+  <p data-i18n="intro"></p>
 
-<h2>What Data Do We Collect?</h2>
-<ul>
-  <li>Personal identification information (name, email address)</li>
-  <li>User account data (authentication via Clerk)</li>
-  <li>Participant case information entered by authorized staff</li>
-  <li>Usage data (basic interaction with the application)</li>
-</ul>
+  <h2 data-i18n="collect.title"></h2>
+  <ul>
+    <li data-i18n="collect.item1"></li>
+    <li data-i18n="collect.item2"></li>
+    <li data-i18n="collect.item3"></li>
+    <li data-i18n="collect.item4"></li>
+  </ul>
 
-<h2>How Do We Collect Your Data?</h2>
-<p>We collect data when you:</p>
-<ul>
-  <li>Register or log in to the application</li>
-  <li>Enter or update participant case information</li>
-  <li>Use the platform features such as scheduling or reporting</li>
-  <li>Provide feedback via email or forms</li>
-</ul>
+  <h2 data-i18n="howCollect.title"></h2>
+  <p data-i18n="howCollect.label"></p>
+  <ul>
+    <li data-i18n="howCollect.item1"></li>
+    <li data-i18n="howCollect.item2"></li>
+    <li data-i18n="howCollect.item3"></li>
+    <li data-i18n="howCollect.item4"></li>
+  </ul>
 
-<h2>How Will We Use Your Data?</h2>
-<p>We use your data to:</p>
-<ul>
-  <li>Provide and maintain the Caritas platform</li>
-  <li>Manage user accounts and authentication</li>
-  <li>Store and manage participant case records</li>
-  <li>Improve application functionality and user experience</li>
-  <li>Respond to feedback or support requests</li>
-</ul>
+  <h2 data-i18n="use.title"></h2>
+  <p data-i18n="use.label"></p>
+  <ul>
+    <li data-i18n="use.item1"></li>
+    <li data-i18n="use.item2"></li>
+    <li data-i18n="use.item3"></li>
+    <li data-i18n="use.item4"></li>
+    <li data-i18n="use.item5"></li>
+  </ul>
 
-<h2>Data Sharing</h2>
-<p>
-We do not sell or rent your personal data. Data may be processed by third-party services required to operate the platform, including:
-</p>
-<ul>
-  <li>Clerk (authentication services)</li>
-  <li>MongoDB Atlas (database hosting)</li>
-</ul>
+  <h2 data-i18n="sharing.title"></h2>
+  <p data-i18n="sharing.body"></p>
+  <ul>
+    <li data-i18n="sharing.item1"></li>
+    <li data-i18n="sharing.item2"></li>
+  </ul>
 
-<h2>How Do We Store Your Data?</h2>
-<p>
-Your data is securely stored using cloud-based services such as MongoDB Atlas. We take reasonable measures to protect your data, including access controls and secure authentication.
-</p>
+  <h2 data-i18n="storage.title"></h2>
+  <p data-i18n="storage.body1"></p>
+  <p data-i18n="storage.body2"></p>
 
-<p>
-Data is retained only as long as necessary for the operation of the platform or as required for the project. Data may be deleted upon request or when no longer needed.
-</p>
+  <h2 data-i18n="marketing.title"></h2>
+  <p data-i18n="marketing.body"></p>
 
-<h2>Marketing</h2>
-<p>
-We do not use your data for marketing purposes.
-</p>
+  <h2 data-i18n="rights.title"></h2>
+  <p data-i18n="rights.label"></p>
+  <ul>
+    <li data-i18n="rights.item1"></li>
+    <li data-i18n="rights.item2"></li>
+    <li data-i18n="rights.item3"></li>
+    <li data-i18n="rights.item4"></li>
+    <li data-i18n="rights.item5"></li>
+  </ul>
+  <p data-i18n="rights.response"></p>
 
-<h2>Your Data Protection Rights</h2>
-<p>You have the right to:</p>
-<ul>
-  <li>Request access to your personal data</li>
-  <li>Request correction of inaccurate data</li>
-  <li>Request deletion of your data</li>
-  <li>Request restriction of processing</li>
-  <li>Object to processing of your data</li>
-</ul>
+  <h2 data-i18n="cookies.title"></h2>
+  <p data-i18n="cookies.body"></p>
 
-<p>
-If you make a request, we will respond within a reasonable timeframe.
-</p>
+  <h2 data-i18n="thirdParty.title"></h2>
+  <p data-i18n="thirdParty.body"></p>
 
-<h2>Cookies</h2>
-<p>
-We may use cookies or similar technologies to support authentication and improve user experience.
-</p>
+  <h2 data-i18n="changes.title"></h2>
+  <p data-i18n="changes.body"></p>
 
-<h2>Third-Party Websites</h2>
-<p>
-Our platform may contain links to external websites. This privacy policy applies only to Caritas. We are not responsible for the privacy practices of other websites.
-</p>
+  <h2 data-i18n="contact.title"></h2>
+  <p data-i18n="contact.body"></p>
+  <p>Email: <a href="mailto:oscarchau126@gmail.com">oscarchau126@gmail.com</a></p>
 
-<h2>Changes to This Privacy Policy</h2>
-<p>
-We may update this policy periodically. Updates will be posted on this page.
-</p>
+  <script>
+    const translations = {
+      ca: {
+        "title": "Política de Privadesa per a Caritas",
+        "intro": "L'Equip de Desenvolupament de Caritas opera la plataforma Caritas, incloent-hi aplicacions web i mòbil. Aquesta política de privadesa explica com recollim, utilitzem i protegim les vostres dades quan feu servir els nostres serveis.",
+        "collect.title": "Quines dades recollim?",
+        "collect.item1": "Informació d'identificació personal (nom, adreça electrònica)",
+        "collect.item2": "Dades del compte d'usuari (autenticació mitjançant Clerk)",
+        "collect.item3": "Informació dels expedients de participants introduïda pel personal autoritzat",
+        "collect.item4": "Dades d'ús (interacció bàsica amb l'aplicació)",
+        "howCollect.title": "Com recollim les vostres dades?",
+        "howCollect.label": "Recollim dades quan:",
+        "howCollect.item1": "Us registreu o inicieu sessió a l'aplicació",
+        "howCollect.item2": "Introduïu o actualitzeu informació dels expedients de participants",
+        "howCollect.item3": "Utilitzeu les funcions de la plataforma, com ara la programació o els informes",
+        "howCollect.item4": "Proporcioneu comentaris per correu electrònic o formularis",
+        "use.title": "Com utilitzem les vostres dades?",
+        "use.label": "Utilitzem les vostres dades per:",
+        "use.item1": "Proporcionar i mantenir la plataforma Caritas",
+        "use.item2": "Gestionar els comptes d'usuari i l'autenticació",
+        "use.item3": "Emmagatzemar i gestionar els expedients dels participants",
+        "use.item4": "Millorar la funcionalitat de l'aplicació i l'experiència de l'usuari",
+        "use.item5": "Respondre als comentaris o sol·licituds d'assistència",
+        "sharing.title": "Compartició de dades",
+        "sharing.body": "No venem ni lloguem les vostres dades personals. Les dades poden ser processades per serveis de tercers necessaris per operar la plataforma, incloent-hi:",
+        "sharing.item1": "Clerk (serveis d'autenticació)",
+        "sharing.item2": "MongoDB Atlas (allotjament de base de dades)",
+        "storage.title": "Com emmagatzemem les vostres dades?",
+        "storage.body1": "Les vostres dades s'emmagatzemen de forma segura mitjançant serveis basats en el núvol com MongoDB Atlas. Prenem mesures raonables per protegir les vostres dades, incloent-hi controls d'accés i autenticació segura.",
+        "storage.body2": "Les dades es conserven només durant el temps necessari per al funcionament de la plataforma o segons requereixi el projecte. Les dades es poden eliminar a petició o quan ja no siguin necessàries.",
+        "marketing.title": "Màrqueting",
+        "marketing.body": "No utilitzem les vostres dades per a fins de màrqueting.",
+        "rights.title": "Els vostres drets de protecció de dades",
+        "rights.label": "Teniu dret a:",
+        "rights.item1": "Sol·licitar accés a les vostres dades personals",
+        "rights.item2": "Sol·licitar la correcció de dades inexactes",
+        "rights.item3": "Sol·licitar l'eliminació de les vostres dades",
+        "rights.item4": "Sol·licitar la restricció del tractament",
+        "rights.item5": "Oposar-vos al tractament de les vostres dades",
+        "rights.response": "Si feu una sol·licitud, respondrem en un termini raonable.",
+        "cookies.title": "Galetes",
+        "cookies.body": "Podem utilitzar galetes o tecnologies similars per donar suport a l'autenticació i millorar l'experiència de l'usuari.",
+        "thirdParty.title": "Llocs web de tercers",
+        "thirdParty.body": "La nostra plataforma pot contenir enllaços a llocs web externs. Aquesta política de privadesa s'aplica únicament a Caritas. No som responsables de les pràctiques de privadesa d'altres llocs web.",
+        "changes.title": "Canvis a aquesta política de privadesa",
+        "changes.body": "Podem actualitzar aquesta política periòdicament. Les actualitzacions es publicaran en aquesta pàgina.",
+        "contact.title": "Contacteu-nos",
+        "contact.body": "Si teniu alguna pregunta sobre aquesta política de privadesa o les vostres dades, poseu-vos en contacte amb nosaltres a:",
+      },
+      es: {
+        "title": "Política de Privacidad para Caritas",
+        "intro": "El Equipo de Desarrollo de Caritas opera la plataforma Caritas, incluidas las aplicaciones web y móvil. Esta política de privacidad explica cómo recopilamos, usamos y protegemos sus datos cuando utiliza nuestros servicios.",
+        "collect.title": "¿Qué datos recopilamos?",
+        "collect.item1": "Información de identificación personal (nombre, dirección de correo electrónico)",
+        "collect.item2": "Datos de cuenta de usuario (autenticación mediante Clerk)",
+        "collect.item3": "Información de expedientes de participantes introducida por personal autorizado",
+        "collect.item4": "Datos de uso (interacción básica con la aplicación)",
+        "howCollect.title": "¿Cómo recopilamos sus datos?",
+        "howCollect.label": "Recopilamos datos cuando:",
+        "howCollect.item1": "Se registra o inicia sesión en la aplicación",
+        "howCollect.item2": "Introduce o actualiza información de expedientes de participantes",
+        "howCollect.item3": "Utiliza las funciones de la plataforma, como la programación o los informes",
+        "howCollect.item4": "Proporciona comentarios por correo electrónico o formularios",
+        "use.title": "¿Cómo utilizamos sus datos?",
+        "use.label": "Utilizamos sus datos para:",
+        "use.item1": "Proporcionar y mantener la plataforma Caritas",
+        "use.item2": "Gestionar cuentas de usuario y autenticación",
+        "use.item3": "Almacenar y gestionar los expedientes de participantes",
+        "use.item4": "Mejorar la funcionalidad de la aplicación y la experiencia del usuario",
+        "use.item5": "Responder a comentarios o solicitudes de soporte",
+        "sharing.title": "Compartición de datos",
+        "sharing.body": "No vendemos ni alquilamos sus datos personales. Los datos pueden ser procesados por servicios de terceros necesarios para operar la plataforma, incluidos:",
+        "sharing.item1": "Clerk (servicios de autenticación)",
+        "sharing.item2": "MongoDB Atlas (alojamiento de base de datos)",
+        "storage.title": "¿Cómo almacenamos sus datos?",
+        "storage.body1": "Sus datos se almacenan de forma segura mediante servicios basados en la nube como MongoDB Atlas. Tomamos medidas razonables para proteger sus datos, incluidos controles de acceso y autenticación segura.",
+        "storage.body2": "Los datos se conservan solo durante el tiempo necesario para el funcionamiento de la plataforma o según lo requiera el proyecto. Los datos pueden eliminarse a petición o cuando ya no sean necesarios.",
+        "marketing.title": "Marketing",
+        "marketing.body": "No utilizamos sus datos para fines de marketing.",
+        "rights.title": "Sus derechos de protección de datos",
+        "rights.label": "Tiene derecho a:",
+        "rights.item1": "Solicitar acceso a sus datos personales",
+        "rights.item2": "Solicitar la corrección de datos inexactos",
+        "rights.item3": "Solicitar la eliminación de sus datos",
+        "rights.item4": "Solicitar la restricción del tratamiento",
+        "rights.item5": "Oponerse al tratamiento de sus datos",
+        "rights.response": "Si realiza una solicitud, responderemos en un plazo razonable.",
+        "cookies.title": "Cookies",
+        "cookies.body": "Podemos usar cookies o tecnologías similares para respaldar la autenticación y mejorar la experiencia del usuario.",
+        "thirdParty.title": "Sitios web de terceros",
+        "thirdParty.body": "Nuestra plataforma puede contener enlaces a sitios web externos. Esta política de privacidad se aplica únicamente a Caritas. No somos responsables de las prácticas de privacidad de otros sitios web.",
+        "changes.title": "Cambios en esta política de privacidad",
+        "changes.body": "Podemos actualizar esta política periódicamente. Las actualizaciones se publicarán en esta página.",
+        "contact.title": "Contáctenos",
+        "contact.body": "Si tiene alguna pregunta sobre esta política de privacidad o sus datos, contáctenos en:",
+      },
+      en: {
+        "title": "Privacy Policy for Caritas",
+        "intro": "The Caritas Development Team operates the Caritas platform, including web and mobile applications. This privacy policy explains how we collect, use, and protect your data when you use our services.",
+        "collect.title": "What Data Do We Collect?",
+        "collect.item1": "Personal identification information (name, email address)",
+        "collect.item2": "User account data (authentication via Clerk)",
+        "collect.item3": "Participant case information entered by authorized staff",
+        "collect.item4": "Usage data (basic interaction with the application)",
+        "howCollect.title": "How Do We Collect Your Data?",
+        "howCollect.label": "We collect data when you:",
+        "howCollect.item1": "Register or log in to the application",
+        "howCollect.item2": "Enter or update participant case information",
+        "howCollect.item3": "Use the platform features such as scheduling or reporting",
+        "howCollect.item4": "Provide feedback via email or forms",
+        "use.title": "How Will We Use Your Data?",
+        "use.label": "We use your data to:",
+        "use.item1": "Provide and maintain the Caritas platform",
+        "use.item2": "Manage user accounts and authentication",
+        "use.item3": "Store and manage participant case records",
+        "use.item4": "Improve application functionality and user experience",
+        "use.item5": "Respond to feedback or support requests",
+        "sharing.title": "Data Sharing",
+        "sharing.body": "We do not sell or rent your personal data. Data may be processed by third-party services required to operate the platform, including:",
+        "sharing.item1": "Clerk (authentication services)",
+        "sharing.item2": "MongoDB Atlas (database hosting)",
+        "storage.title": "How Do We Store Your Data?",
+        "storage.body1": "Your data is securely stored using cloud-based services such as MongoDB Atlas. We take reasonable measures to protect your data, including access controls and secure authentication.",
+        "storage.body2": "Data is retained only as long as necessary for the operation of the platform or as required for the project. Data may be deleted upon request or when no longer needed.",
+        "marketing.title": "Marketing",
+        "marketing.body": "We do not use your data for marketing purposes.",
+        "rights.title": "Your Data Protection Rights",
+        "rights.label": "You have the right to:",
+        "rights.item1": "Request access to your personal data",
+        "rights.item2": "Request correction of inaccurate data",
+        "rights.item3": "Request deletion of your data",
+        "rights.item4": "Request restriction of processing",
+        "rights.item5": "Object to processing of your data",
+        "rights.response": "If you make a request, we will respond within a reasonable timeframe.",
+        "cookies.title": "Cookies",
+        "cookies.body": "We may use cookies or similar technologies to support authentication and improve user experience.",
+        "thirdParty.title": "Third-Party Websites",
+        "thirdParty.body": "Our platform may contain links to external websites. This privacy policy applies only to Caritas. We are not responsible for the privacy practices of other websites.",
+        "changes.title": "Changes to This Privacy Policy",
+        "changes.body": "We may update this policy periodically. Updates will be posted on this page.",
+        "contact.title": "Contact Us",
+        "contact.body": "If you have any questions about this privacy policy or your data, contact us at:",
+      }
+    };
 
-<h2>Contact Us</h2>
-<p>
-If you have any questions about this privacy policy or your data, contact us at:
-</p>
+    function setLanguage(lang) {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+      document.documentElement.lang = lang;
+      document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+      document.getElementById('btn-' + lang).classList.add('active');
+      localStorage.setItem('caritasLang', lang);
+    }
 
-<p>
-Email: <a href="mailto:oscarchau126@gmail.com">oscarchau126@gmail.com</a>
-</p>
-
+    const savedLang = localStorage.getItem('caritasLang') || 'ca';
+    setLanguage(savedLang);
+  </script>
 </body>
 </html>
