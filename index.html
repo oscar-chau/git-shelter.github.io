@@ -180,7 +180,7 @@
       <img src="caritas-logo.png" alt="Caritas Logo" class="logo" />
       <p data-i18n="header.description"></p>
       <div class="button-row">
-        <a class="button" href="#" data-i18n="header.button"></a>
+        <a class="button" href="https://caritas-5gsqkk99h-aidendureskys-projects.vercel.app/" target="_blank" data-i18n="header.button"></a>
       </div>
     </header>
 
@@ -221,7 +221,7 @@
       <section>
         <h2 data-i18n="links.title"></h2>
         <ul>
-          <li><a href="#" data-i18n="links.live"></a></li>
+          <li><a href="https://caritas-5gsqkk99h-aidendureskys-projects.vercel.app/" target="_blank" data-i18n="links.live"></a></li>
           <li><a href="#installation" data-i18n="links.install"></a></li>
           <li><a href="#usage" data-i18n="links.usage"></a></li>
           <li><a href="#admin" data-i18n="links.admin"></a></li>
@@ -457,7 +457,6 @@
       };
 
       function setLanguage(lang) {
-        // Update all translated elements
         document.querySelectorAll('[data-i18n]').forEach(el => {
           const key = el.getAttribute('data-i18n');
           if (translations[lang][key]) {
@@ -465,18 +464,14 @@
           }
         });
 
-        // Update html lang attribute
         document.documentElement.lang = lang;
 
-        // Update active button
         document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
         document.getElementById('btn-' + lang).classList.add('active');
 
-        // Persist preference
         localStorage.setItem('caritasLang', lang);
       }
 
-      // On load, use saved preference or default to Catalan
       const savedLang = localStorage.getItem('caritasLang') || 'ca';
       setLanguage(savedLang);
     </script>
