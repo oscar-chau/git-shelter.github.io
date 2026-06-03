@@ -165,6 +165,68 @@
         border-radius: 4px;
         font-size: 0.95rem;
       }
+
+      /* Bug report format box */
+      .bug-format {
+        background: #f8faff;
+        border: 1px solid #dbeafe;
+        border-left: 4px solid #2563eb;
+        border-radius: 8px;
+        padding: 1rem 1.25rem;
+        margin: 1rem 0;
+        font-size: 0.95rem;
+      }
+
+      .bug-format p {
+        margin: 0 0 0.5rem;
+        font-weight: 600;
+        color: #1e40af;
+      }
+
+      .bug-format ol {
+        margin: 0;
+        padding-left: 1.25rem;
+        line-height: 1.9;
+      }
+
+      .feedback-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-top: 1.25rem;
+        align-items: center;
+      }
+
+      .button-jira {
+        display: inline-block;
+        padding: 0.65rem 1.1rem;
+        background: #2563eb;
+        color: white;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 0.95rem;
+      }
+
+      .button-jira:hover {
+        background: #1d4ed8;
+        text-decoration: none;
+      }
+
+      .feedback-email {
+        font-size: 0.9rem;
+        color: #6b7280;
+      }
+
+      .feedback-email a {
+        color: #2563eb;
+      }
+
+      .jira-access-note {
+        margin-top: 0.85rem;
+        font-size: 0.9rem;
+        color: #6b7280;
+      }
     </style>
   </head>
   <body>
@@ -272,9 +334,28 @@
         </ul>
       </section>
 
+      <!-- FEEDBACK SECTION -->
       <section>
         <h2 data-i18n="feedback.title"></h2>
-        <p><span data-i18n="feedback.contact"></span> <a href="mailto:oscarchau126@gmail.com">oscarchau126@gmail.com</a></p>
+        <p data-i18n="feedback.intro"></p>
+
+        <div class="bug-format">
+          <p data-i18n="feedback.formatTitle"></p>
+          <ol>
+            <li><strong data-i18n="feedback.f1.label"></strong> – <span data-i18n="feedback.f1.desc"></span></li>
+            <li><strong data-i18n="feedback.f2.label"></strong> – <span data-i18n="feedback.f2.desc"></span></li>
+            <li><strong data-i18n="feedback.f3.label"></strong> – <span data-i18n="feedback.f3.desc"></span></li>
+            <li><strong data-i18n="feedback.f4.label"></strong> – <span data-i18n="feedback.f4.desc"></span></li>
+            <li><strong data-i18n="feedback.f5.label"></strong> – <span data-i18n="feedback.f5.desc"></span></li>
+          </ol>
+        </div>
+
+        <div class="feedback-actions">
+          <a class="button-jira" href="https://calpoly-se-capstone.atlassian.net/jira/software/c/projects/GIT/boards/190" target="_blank" data-i18n="feedback.jiraButton"></a>
+          <span class="feedback-email"><span data-i18n="feedback.emailFallback"></span> <a href="mailto:oscarchau126@gmail.com">oscarchau126@gmail.com</a></span>
+        </div>
+
+        <p class="jira-access-note" data-i18n="feedback.accessNote"></p>
       </section>
 
       <section>
@@ -340,7 +421,21 @@
           "admin.step3": "Establiu l'URL correcta del backend",
           "admin.step4": "Executeu Prisma després de la configuració de la base de dades",
           "feedback.title": "Comentaris i informes d'errors",
-          "feedback.contact": "Contacte:",
+          "feedback.intro": "Utilitzeu el tauler Jira del projecte per informar d'errors i enviar comentaris. Per ajudar-nos a resoldre els problemes ràpidament, incloeu la informació següent a l'informe:",
+          "feedback.formatTitle": "Format recomanat per a l'informe d'errors:",
+          "feedback.f1.label": "Títol",
+          "feedback.f1.desc": "Resum breu del problema (p. ex., «No es pot desar l'expedient del participant»).",
+          "feedback.f2.label": "Passos per reproduir",
+          "feedback.f2.desc": "Llista numerada de les accions que provoquen el problema.",
+          "feedback.f3.label": "Comportament esperat",
+          "feedback.f3.desc": "Descripció del que hauria de passar.",
+          "feedback.f4.label": "Comportament real",
+          "feedback.f4.desc": "Descripció del que passa realment, incloent-hi missatges d'error si n'hi ha.",
+          "feedback.f5.label": "Entorn",
+          "feedback.f5.desc": "Navegador, sistema operatiu i URL de la pàgina on s'ha produït l'error.",
+          "feedback.jiraButton": "Obrir Jira",
+          "feedback.emailFallback": "O envieu un correu electrònic a:",
+          "feedback.accessNote": "Si no teniu accés al tauler Jira, contacteu amb oscarchau126@gmail.com per sol·licitar accés o envieu l'informe directament per correu electrònic.",
           "legal.title": "Legal",
           "legal.eula": "EULA",
           "legal.privacy": "Política de privadesa",
@@ -394,7 +489,21 @@
           "admin.step3": "Establezca la URL correcta del backend",
           "admin.step4": "Ejecute Prisma después de la configuración de la base de datos",
           "feedback.title": "Comentarios e informes de errores",
-          "feedback.contact": "Contacto:",
+          "feedback.intro": "Utilice el tablero de Jira del proyecto para informar errores y enviar comentarios. Para ayudarnos a resolver los problemas rápidamente, incluya la siguiente información en el informe:",
+          "feedback.formatTitle": "Formato recomendado para el informe de errores:",
+          "feedback.f1.label": "Título",
+          "feedback.f1.desc": "Resumen breve del problema (p. ej., «No se puede guardar el expediente del participante»).",
+          "feedback.f2.label": "Pasos para reproducir",
+          "feedback.f2.desc": "Lista numerada de las acciones que provocan el problema.",
+          "feedback.f3.label": "Comportamiento esperado",
+          "feedback.f3.desc": "Descripción de lo que debería ocurrir.",
+          "feedback.f4.label": "Comportamiento real",
+          "feedback.f4.desc": "Descripción de lo que ocurre realmente, incluyendo mensajes de error si los hay.",
+          "feedback.f5.label": "Entorno",
+          "feedback.f5.desc": "Navegador, sistema operativo y URL de la página donde se produjo el error.",
+          "feedback.jiraButton": "Abrir Jira",
+          "feedback.emailFallback": "O envíe un correo electrónico a:",
+          "feedback.accessNote": "Si no tiene acceso al tablero de Jira, contacte con oscarchau126@gmail.com para solicitar acceso o envíe el informe directamente por correo electrónico.",
           "legal.title": "Legal",
           "legal.eula": "EULA",
           "legal.privacy": "Política de privacidad",
@@ -448,7 +557,21 @@
           "admin.step3": "Set correct backend URL",
           "admin.step4": "Run Prisma after DB setup",
           "feedback.title": "Feedback and Bug Reports",
-          "feedback.contact": "Contact:",
+          "feedback.intro": "Use the project's Jira board to report bugs and submit feedback. To help us resolve issues quickly, please include the following information in your report:",
+          "feedback.formatTitle": "Recommended bug report format:",
+          "feedback.f1.label": "Title",
+          "feedback.f1.desc": "A short summary of the problem (e.g., \"Cannot save participant case file\").",
+          "feedback.f2.label": "Steps to Reproduce",
+          "feedback.f2.desc": "A numbered list of actions that trigger the issue.",
+          "feedback.f3.label": "Expected Behavior",
+          "feedback.f3.desc": "What should happen.",
+          "feedback.f4.label": "Actual Behavior",
+          "feedback.f4.desc": "What actually happens, including any error messages.",
+          "feedback.f5.label": "Environment",
+          "feedback.f5.desc": "Browser, operating system, and the page URL where the bug occurred.",
+          "feedback.jiraButton": "Open Jira Board",
+          "feedback.emailFallback": "Or email us at:",
+          "feedback.accessNote": "If you don't have access to the Jira board, contact oscarchau126@gmail.com to request access or submit your report directly by email.",
           "legal.title": "Legal",
           "legal.eula": "EULA",
           "legal.privacy": "Privacy Policy",
